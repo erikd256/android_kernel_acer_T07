@@ -1,0 +1,20 @@
+How to Build
+
+kernel
+======
+1. Get the prebuilt cross compiler from AOSP website:
+   $ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8
+
+2. Add required cross compiler to PATH:
+   $ export ARCH=arm
+   $ export CROSS_COMPILE=$(android platform path)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
+
+3. Then use the following commands to build the kernel:
+   $ cd kernel-3.18/
+   $ make zal875_platform_debug_defconfig
+   $ make
+
+output
+======
+1. When the build process is completed, the generated kernel can be found in the following path:
+   kernel-3.18/arch/arm/boot/zImage
